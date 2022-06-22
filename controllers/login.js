@@ -18,7 +18,7 @@ const createLogin = async(req , res) => {
 
   if (match) {
     return res.status(200).json({
-      message: 'Usuario logueado correctamente',
+      user,
       token
     })    
   }else{

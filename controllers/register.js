@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 
 const createRegister = async(req , res) => {
   const { nombre , fecha , dni , direccion , localidad , provincia , email , contrasena , repeatcontrasena} = req.body
-
+  
   const contrasenaEncriptada = bcrypt.hashSync(contrasena , 10)
   const repeatcontrasenaEncriptada = bcrypt.hashSync(repeatcontrasena , 10)
 
