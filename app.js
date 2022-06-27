@@ -10,6 +10,9 @@ const indexRouter = require('./routes/index');
 const areasRouter = require('./routes/areas');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login')
+const registerAdminRouter = require('./routes/registerAdmin')
+const loginAdminRouter = require('./routes/loginAdmin')
+
 
 const app = express();
 
@@ -28,6 +31,8 @@ app.use('/', indexRouter);
 app.use('/areas', areasRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter)
+app.use('/registerAdmin', registerAdminRouter)
+app.use('/loginAdmin', loginAdminRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
