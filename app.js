@@ -12,7 +12,7 @@ const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login')
 const registerAdminRouter = require('./routes/registerAdmin')
 const loginAdminRouter = require('./routes/loginAdmin')
-
+const turnosRouter = require ('./routes/turno')
 
 const app = express();
 
@@ -33,6 +33,7 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter)
 app.use('/registerAdmin', registerAdminRouter)
 app.use('/loginAdmin', loginAdminRouter)
+app.use('/turnos',turnosRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
