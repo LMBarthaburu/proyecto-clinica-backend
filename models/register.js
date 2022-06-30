@@ -10,6 +10,7 @@ const registro = new Schema({
   email: String,
   contrasena: String,
   repeatcontrasena: String,
+  id: String
 })
 
 module.exports = model('Registro' , registro)
