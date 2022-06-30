@@ -38,7 +38,51 @@ const createRegister = async(req , res) => {
     })
     
   }
- 
 }
 
-module.exports = { createRegister }
+  const getRegister = async (rep,res)=>{
+    const registros = await Registro.find({})
+    try {
+      res.json({
+        registros
+      })
+    } catch (error) {
+      res.json({
+        error
+      })
+    }
+  }
+  
+  const editRegister= async (req, res)=>{
+    const { nombre , fecha , dni , direccion , localidad , provincia , email, id} = req.body
+    const regsitroEditado = await Registro.findByIdAndUpdate(id,{
+      nombre,
+      fecha,
+      dni,
+      direccion,
+      localidad,
+      provincia,
+      email
+    })
+    try {
+      res.json({
+        message: 'Usuario editado con exito'
+      })
+    } catch (error) {
+      
+    }
+  }
+  
+  const deleteRegister= async (req, res)=>{
+    const {id} = req.body
+    const registroEliminado = await Registro.findByIdAndDelete(id)
+    try {
+      res.json({
+        message: 'Usuario eliminada',
+      })
+    } catch (error) {
+      
+    }
+  }
+
+module.exports = {createRegister, deleteRegister, editRegister, getRegister}
