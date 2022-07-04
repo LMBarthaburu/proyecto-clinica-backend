@@ -19,7 +19,7 @@ const getTurnos = async (rep,res)=>{
     const turnos = await Turno.find({})
     try {
       res.json({
-        Message:'¡Todos los turnos visibles!'
+        turnos
       })
     } catch (error) {
       res.json({
