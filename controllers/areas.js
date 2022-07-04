@@ -45,7 +45,9 @@ const editAreas= async (req, res)=>{
       areaEditada
     })
   } catch (error) {
-    
+    res.json({
+      error
+    })
   }
 }
 
@@ -58,7 +60,9 @@ const deleteAreas= async (req, res)=>{
       areaEliminada
     })
   } catch (error) {
-    
+    res.json({
+      error
+    })
   }
 }
 
